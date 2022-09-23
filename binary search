@@ -1,0 +1,79 @@
+basic binary search code:
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left=0
+        right=len(nums)-1
+        
+        while left<=right:
+            mid=left+(right-left)//2
+            if nums[mid]>target:
+                right=mid-1
+            elif nums[mid]<target:
+                left=mid+1
+            else:
+                return mid
+        return -1
+        
+         Find First and Last Position of Element in Sorted Array
+         
+         class Solution:
+    
+    def searchnum(self, nums, target):
+        
+    
+        n= len(nums)
+        low=0
+        high= n-1
+        while(low<=high):
+            mid= low+ (high-low)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]>target:
+                high= mid+1
+            else:
+                low= mid+1
+    
+    
+
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+  
+        index= self.searchnum(nums, target)
+        if index is None:
+            
+                
+            return [-1,-1]
+        lowindex= index
+        while 0<=lowindex<len(nums) and nums[lowindex]==target:
+            lowindex-=1
+            highindex=index
+        while 0<=highindex<len(nums) and nums[highindex]==target:
+            highindex+=1
+        return [lowindex+1, highindex-1]
+        
+        
+        
+        
+        
+        
+        
+        
+    def searchnum(self, nums, target):
+        
+    
+        n= len(nums)
+        low=0
+        high= n-1
+        while(low<=high):
+            mid= int((low+high)/2)
+            if nums[mid]==target:
+                
+                return mid
+            elif nums[mid]>target:
+                high= mid-1
+            else:
+                low= mid+1
+     
+                
+            
+                      
+    
